@@ -1,1 +1,53 @@
-Notebook[{}]
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[      1215,         43]
+NotebookOptionsPosition[       858,         29]
+NotebookOutlinePosition[      1267,         45]
+CellTagsIndexPosition[      1224,         42]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+PLAPT: Protein - Ligand Binding Affinity Prediction Using Pretrained \
+Transformer Models\
+\>", "Title",
+ CellChangeTimes->{{3.9090878873448906`*^9, 3.909087893606921*^9}, {
+  3.909088389994187*^9, 
+  3.9090884480846577`*^9}},ExpressionUUID->"7a8c3bb9-9e50-4e3d-bc86-\
+cc2163a1ae76"]
+},
+WindowSize->{897.75, 624.},
+WindowMargins->{{Automatic, 194.25}, {Automatic, 33}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 31, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"400c910b-3d62-479f-b1fb-b485434fe7c3"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[561, 20, 293, 7, 222, "Title",ExpressionUUID->"7a8c3bb9-9e50-4e3d-bc86-cc2163a1ae76"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
