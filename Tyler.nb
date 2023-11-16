@@ -1,1 +1,91 @@
-Notebook[{}]
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[      3270,         83]
+NotebookOptionsPosition[      2725,         67]
+NotebookOutlinePosition[      3135,         83]
+CellTagsIndexPosition[      3092,         80]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"proteinTokenAssociation", "=", 
+   RowBox[{"AssociationThread", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<A\>\"", ",", "\"\<R\>\"", ",", "\"\<N\>\"", ",", "\"\<D\>\"", ",", 
+       "\"\<C\>\"", ",", "\"\<Q\>\"", ",", "\"\<E\>\"", ",", "\"\<G\>\"", 
+       ",", "\"\<H\>\"", ",", "\"\<I\>\"", ",", "\"\<L\>\"", ",", "\"\<K\>\"",
+        ",", "\"\<M\>\"", ",", "\"\<F\>\"", ",", "\"\<P\>\"", ",", 
+       "\"\<S\>\"", ",", "\"\<T\>\"", ",", "\"\<W\>\"", ",", "\"\<Y\>\"", 
+       ",", "\"\<V\>\"", ",", "\"\<B\>\"", ",", "\"\<U\>\"", ",", "\"\<Z\>\"",
+        ",", "\"\<O\>\"", ",", "\"\<J\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "6", ",", "13", ",", "17", ",", "14", ",", "23", ",", "18", ",", "9", 
+       ",", "7", ",", "22", ",", "11", ",", "5", ",", "12", ",", "21", ",", 
+       "19", ",", "16", ",", "10", ",", "15", ",", "24", ",", "20", ",", "8", 
+       ",", "25", ",", "25", ",", "25", ",", "25", ",", "25"}], "}"}]}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.909087158635081*^9, 3.9090872310762997`*^9}, {
+  3.90908732154321*^9, 3.909087348658099*^9}, {3.9090873937410536`*^9, 
+  3.909087405304*^9}, {3.90908754759625*^9, 3.9090876474243937`*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"9be8d075-5385-4a1e-9348-3607e9d0db4d"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"TokenizeProtein", "[", "seq_String", "]"}], ":=", 
+  RowBox[{"Flatten", "[", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"proteinTokenAssociation", "[", "#", "]"}], "&"}], "/@", 
+      RowBox[{"StringSplit", "[", "seq", "]"}]}], ",", "3"}], "}"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.9090873523211536`*^9, 3.909087458092126*^9}, {
+  3.909087529331235*^9, 3.909087531505121*^9}, {3.9090876650055666`*^9, 
+  3.909087666416535*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"f4a59c8c-afcb-46d1-8ab8-69ee03d9e8f4"],
+
+Cell[BoxData[
+ RowBox[{"TokenizeProtein", "[", "\"\<A B C D E F G\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.9090874634894285`*^9, 3.909087509646867*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"9ad0b630-94ac-429b-89eb-b830028c98b0"]
+},
+WindowSize->{581.25, 648.75},
+WindowMargins->{{423, Automatic}, {Automatic, 40.5}},
+FrontEndVersion->"13.2 for Microsoft Windows (64-bit) (January 31, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6e184f9e-002c-4584-8ba7-f184546546c5"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[561, 20, 1326, 24, 124, "Input",ExpressionUUID->"9be8d075-5385-4a1e-9348-3607e9d0db4d"],
+Cell[1890, 46, 593, 14, 48, "Input",ExpressionUUID->"f4a59c8c-afcb-46d1-8ab8-69ee03d9e8f4"],
+Cell[2486, 62, 235, 3, 28, "Input",ExpressionUUID->"9ad0b630-94ac-429b-89eb-b830028c98b0"]
+}
+]
+*)
+
