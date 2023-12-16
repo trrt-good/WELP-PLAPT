@@ -1,0 +1,16 @@
+{
+    "with_mean": true,
+    "with_std": true,
+    "copy": true,
+    "n_features_in_": 1,
+    "n_samples_seen_": 1927202,
+    "mean_": [
+        6.51286529169358
+    ],
+    "var_": [
+        2.4379994951935378
+    ],
+    "scale_": [
+        1.5614094578916633
+    ]
+}
