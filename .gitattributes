@@ -1,3 +1,0 @@
-models/*.onnx filter=lfs diff=lfs merge=lfs -text
-models/mol_encoder.onnx filter=lfs diff=lfs merge=lfs -text
-models/prot_encoder.onnx filter=lfs diff=lfs merge=lfs -text
