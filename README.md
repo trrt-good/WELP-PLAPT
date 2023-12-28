@@ -25,3 +25,5 @@ PLAPT achieved impressive results, demonstrating both high accuracy and state-of
 | MAE (Mean Absolute Error) | 0.864218 | 0.861717 |
 
 ![PLAPT Results Graph](https://github.com/trrt-good/WELP-PLAPT/blob/main/Diagrams/Graphs.png)
+<img width="648" alt="Screenshot 2023-12-28 at 7 51 22 AM" src="https://github.com/trrt-good/WELP-PLAPT/assets/25653940/f3051e72-a669-4425-bb09-f82ac52b14a8">
+<img width="638" alt="Screenshot 2023-12-28 at 7 51 30 AM" src="https://github.com/trrt-good/WELP-PLAPT/assets/25653940/8367503c-d0de-41c2-9254-aec4570b93d6">
