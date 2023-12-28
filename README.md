@@ -8,7 +8,7 @@ This study, introduces the Protein Ligand Binding Affinity Prediction Using Pret
 ![PLAPT Results Graph](https://github.com/trrt-good/WELP-PLAPT/blob/main/Diagrams/PLAPT.png)
 
 #### Data Preparation and Encoding
-We sourcing protein-ligand pairs and their corresponding affinity values from an open-source binding affinity dataset on hugginface, [binding_affinity](https://huggingface.co/datasets/jglaser/binding_affinity). We then used ProtBERT and ChemBERTa for encoding proteins and ligands respectively, giving us high quality vector-space representations. The encoding process is detailed in the `encoding.ipynb` notebook. The dataset, already encoded, is available on our [Google Drive](https://drive.google.com/drive/folders/1e-ujgHx5bW0JKxSZY5u34As77o4-IIFs?usp=sharing) for ease of access and use.
+We source protein-ligand pairs and their corresponding affinity values from an open-source binding affinity dataset on hugginface, [binding_affinity](https://huggingface.co/datasets/jglaser/binding_affinity). We then used ProtBERT and ChemBERTa for encoding proteins and ligands respectively, giving us high quality vector-space representations. The encoding process is detailed in the `encoding.ipynb` notebook. The dataset, already encoded, is available on our [Google Drive](https://drive.google.com/drive/folders/1e-ujgHx5bW0JKxSZY5u34As77o4-IIFs?usp=sharing) for ease of access and use.
 
 #### Importing Encoders and Running the Notebook
 For users to import the encoders and run the Wolfram notebook (`WL Notebooks/FinalEssay.nb`), we provide the `encoders_to_onnx.ipynb` notebook. This ensures that users can replicate our encoding process and utilize the full capabilities of PLAPT.
