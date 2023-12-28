@@ -52,6 +52,6 @@ PLAPT achieved impressive results, demonstrating both high accuracy and state-of
 
 ![PLAPT Results Graph](https://github.com/trrt-good/WELP-PLAPT/blob/main/Diagrams/Graphs.png)
 <p align = "center">
-<img width="648" alt="Screenshot 2023-12-28 at 7 51 22 AM" src="https://github.com/trrt-good/WELP-PLAPT/assets/25653940/f3051e72-a669-4425-bb09-f82ac52b14a8">
-<img width="638" alt="Screenshot 2023-12-28 at 7 51 30 AM" src="https://github.com/trrt-good/WELP-PLAPT/assets/25653940/8367503c-d0de-41c2-9254-aec4570b93d6">
+<img width="100%" alt="Screenshot 2023-12-28 at 7 51 22 AM" src="https://github.com/trrt-good/WELP-PLAPT/assets/25653940/f3051e72-a669-4425-bb09-f82ac52b14a8">
+<img width="100%" alt="Screenshot 2023-12-28 at 7 51 30 AM" src="https://github.com/trrt-good/WELP-PLAPT/assets/25653940/8367503c-d0de-41c2-9254-aec4570b93d6">
 </p>
