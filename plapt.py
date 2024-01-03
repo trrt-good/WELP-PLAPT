@@ -39,7 +39,7 @@ class PredictionModule:
         return affinities
 
 class Plapt:
-    def __init__(self, prediction_module_path = "models/predictionModule.onnx", device='cuda'):
+    def __init__(self, prediction_module_path = "models/predictionModule.onnx", caching=False, device='cuda'):
         # Set device for computation
         self.device = torch.device(device if torch.cuda.is_available() else 'cpu')
 
@@ -51,6 +51,7 @@ class Plapt:
         self.mol_tokenizer = RobertaTokenizer.from_pretrained("seyonec/ChemBERTa-zinc-base-v1")
         self.mol_encoder = RobertaModel.from_pretrained("seyonec/ChemBERTa-zinc-base-v1").to(self.device)
 
+        self.caching = caching
         self.cache = {}
 
         # Load the prediction module ONNX model
@@ -93,7 +94,7 @@ class Plapt:
         for batch in self.make_batches(input_strs, batch_size):
             batch_key = str(batch)  # Convert batch to a string to use as a dictionary key
 
-            if batch_key in self.cache:
+            if batch_key in self.cache and self.caching:
                 # Use cached features if available
                 features = self.cache[batch_key]
             else:
@@ -104,7 +105,9 @@ class Plapt:
                     mol_representations = self.mol_encoder(**mol_tokens.to(self.device)).pooler_output.cpu()
 
                 features = [torch.cat((prot, mol), dim=0) for prot, mol in zip(prot_representations, mol_representations)]
-                self.cache[batch_key] = features
+
+                if self.caching:
+                    self.cache[batch_key] = features
 
             affinities.extend(self.prediction_module.predict(features))
 
