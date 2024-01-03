@@ -37,7 +37,7 @@ class PredictionModule:
         return affinities
 
 class Plapt:
-    def __init__(self, prediction_module_path = "models/predictionModule.onnx", caching=False, device='cuda'):
+    def __init__(self, prediction_module_path = "models/predictionModule.onnx", caching=True, device='cuda'):
         # Set device for computation
         self.device = torch.device(device if torch.cuda.is_available() else 'cpu')
 
