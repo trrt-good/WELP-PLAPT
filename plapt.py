@@ -1,5 +1,4 @@
 import torch
-from torch.utils.data import DataLoader
 from transformers import BertTokenizer, BertModel, RobertaTokenizer, RobertaModel
 import re
 import onnxruntime
@@ -7,7 +6,6 @@ import numpy as np
 
 class PredictionModule:
     def __init__(self, model_path="models/predictionModule.onnx"):
-        """Initialize the PredictionModule with the given ONNX model."""
         self.session = onnxruntime.InferenceSession(model_path)
         self.input_name = self.session.get_inputs()[0].name
 
