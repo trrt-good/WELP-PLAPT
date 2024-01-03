@@ -21,20 +21,19 @@ class PredictionModule:
 
     def predict(self, batch_data):
         """Run predictions on a batch of data."""
-        # Ensure data is in numpy array format and the correct dtype
-        batch_data = np.array(batch_data).astype(np.float32)
+        # Convert each tensor to a numpy array and store in a list
+        batch_data = np.array([t.numpy() for t in batch_data])
 
         # Process each feature in the batch individually and store results
         affinities = []
         for feature in batch_data:
-            # Reshape the feature to match the model's expected input shape
-            feature = feature.reshape(1, -1)
             # Run the model on the single feature
-            affinity_normalized = self.session.run(None, {self.input_name: feature, 'TrainingMode': np.array(False)})[0][0][0]
+            affinity_normalized = self.session.run(None, {self.input_name: [feature], 'TrainingMode': np.array(False)})[0][0][0]
             # Append the result
             affinities.append(self.convert_to_affinity(affinity_normalized))
 
         return affinities
+
 
 class Plapt:
     def __init__(self, prediction_module_path = "models/predictionModule.onnx", caching=True, device='cuda'):
