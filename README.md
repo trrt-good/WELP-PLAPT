@@ -3,23 +3,24 @@
 This is the official code repository for PLAPT, a state-of-the-art 1D sequence-only protein-ligand binding affinity predictor, first introduced [here](https://community.wolfram.com/groups/-/m/t/3094670)
 
 ### Abstract
-This study, introduces the Protein Ligand Binding Affinity Prediction Using Pretrained Transformer Models (PLAPT) model, an innovative machine learning approach to predict protein-ligand binding affinities with high accuracy and generalizability, leveraging the wide knowledge of pretrained transformer models. By using ProtBERT and ChemBERTa for encoding protein and ligand sequences, respectively, we trained a two-branch dense neural network that effectively fuses these encodings to estimate binding affinity values. The PLAPT model not only achieves a high Pearson correlation coefficient of ~0.8, but also exhibits no overfitting, a remarkable feat in the context of computational affinity prediction. The robustness of PLAPT, attributed to its generalized transfer learning approach from pre-trained encoders, demonstrates the substantial potential of leveraging extant biochemical knowledge to enhance predictive models in drug discovery.
+This study, introduces the Protein Ligand Binding Affinity Prediction Using Pretrained Transformers (PLAPT) model, an innovative machine learning approach to predict protein-ligand binding affinities with high accuracy and generalizability, leveraging the wide knowledge of pretrained transformer models. By using ProtBERT and ChemBERTa for encoding protein and ligand sequences, respectively, we trained a two-branch dense neural network that effectively fuses these encodings to estimate binding affinity values. The PLAPT model not only achieves a high Pearson correlation coefficient of ~0.8, but also exhibits negligible overfitting, a remarkable feat in the context of computational affinity prediction. The robustness of PLAPT, attributed to its generalized transfer learning approach from pre-trained encoders, demonstrates the substantial potential of leveraging extant biochemical knowledge to enhance predictive models in drug discovery.
 
 ![PLAPT Architecture](https://github.com/trrt-good/WELP-PLAPT/blob/main/Diagrams/PLAPT.png)
 
 ---
-
-# Plapt CLI
+# Usage
+---
+## Plapt CLI
 
 Plapt CLI is a command-line interface for the Plapt Python package, designed for predicting affinities using sequences and SMILES strings. This tool is user-friendly and offers flexibility in output formats and file handling.
 
-## Prerequisites
+### Prerequisites
 
 Before using Plapt CLI, you need to have the following installed:
 - Python (Download and install from [python.org](https://www.python.org/))
 - Git (Download and install from [git-scm.com](https://git-scm.com/)) - Alternatively, you can download the repository as a ZIP file.
 
-## Installation
+### Installation
 
 To install Plapt CLI, you can clone the repository from GitHub:
 
@@ -42,53 +43,60 @@ pip install -r requirements.txt
 source /path/to/your/venv/bin/activate
 ```
 
-## Usage
-
-Navigate to the directory where you cloned or extracted the Plapt CLI repository. The `plapt_cli.py` script is your main entry point.
-
-### Basic Usage
-
-Run the script with the following command:
+### Running the Script
 
 ```bash
-python plapt_cli.py -s [SEQUENCES] -m [SMILES]
+python plapt_cli.py -s SEQ1 SEQ2 ... -m SMILES1 SMILES2 ... -o OUTPUT_FILE -f FORMAT
 ```
 
-Replace `[SEQUENCES]` and `[SMILES]` with your lists of sequences and SMILES strings, respectively. **Do not use brackets**.
+- `-s`: Followed by one or more sequences.
+- `-m`: Followed by one or more SMILES strings.
+- `-o`: (Optional) Path to the output file. If omitted, results are printed to the console.
+- `-f`: (Optional) Format of the output file (`json` or `csv`). Required if `-o` is used without specifying a file extension.
 
-### Advanced Usage
+#### Examples
 
-#### Output to a File
+- To print results to the console:
 
-To save results to a file, use the `-o` option:
+  ```bash
+  python plapt_cli.py -s SEQ1 SEQ2 -m SMILES1 SMILES2
+  ```
 
-```bash
-python plapt_cli.py -s SEQ1 SEQ2 -m SMILES1 SMILES2 -o results.json
-```
+- To save results to a JSON file:
 
-#### Specify Output Format
+  ```bash
+  python plapt_cli.py -s SEQ1 SEQ2 -m SMILES1 SMILES2 -o results.json
+  ```
 
-To define the format of the output file (JSON or CSV), use the `-f` option:
+- To save results to a CSV file:
 
-```bash
-python plapt_cli.py -s SEQ1 SEQ2 -m SMILES1 SMILES2 -o results -f csv
-```
+  ```bash
+  python plapt_cli.py -s SEQ1 SEQ2 -m SMILES1 SMILES2 -o results.csv
+  ```
+
+- To specify the format explicitly:
+
+  ```bash
+  python plapt_cli.py -s SEQ1 SEQ2 -m SMILES1 SMILES2 -o results -f json
+  ```
+
+- If `-o` is omitted, results are printed to the console.
 
 ---
 
-# Using Plapt Directly in Python
+## Using Plapt Directly in Python
 
 Apart from the command-line interface, Plapt can also be used directly in Python scripts. This allows for more flexibility and integration into larger Python projects or workflows.
 
-## Installation
+### Installation
 
 Ensure you have followed the installation steps mentioned in the earlier section to set up the Plapt environment and dependencies. 
 
-## Basic Usage
+### Basic Usage
 
 To use Plapt in a Python script, you need to import the `Plapt` class and then create an instance of it. You can then call its methods to predict affinities.
 
-### Importing and Initializing Plapt
+#### Importing and Initializing Plapt
 
 ``` python
 # First, import the Plapt class from the package, making sure you are working in the same directory as the plapt.py file:
@@ -98,7 +106,7 @@ from plapt import Plapt
 plapt = Plapt()
 ```
 
-### Running Predictions
+#### Running Predictions
 After initializing the `Plapt` object, you can use it to predict affinities. Here's an example of how to do it:
 
 ```python
@@ -114,7 +122,7 @@ output:
 ```
 The outputted json can subsequently used for other tasks.
 
-## Advanced Usage
+### Advanced Usage
 
 Plapt can be initialized with specialized parameters, such as the prediction module used, caching, or the inference device. Example below:
 ``` python
