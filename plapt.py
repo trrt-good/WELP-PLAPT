@@ -34,7 +34,6 @@ class PredictionModule:
 
         return affinities
 
-
 class Plapt:
     def __init__(self, prediction_module_path = "models/predictionModule.onnx", caching=True, device='cuda'):
         # Set device for computation
