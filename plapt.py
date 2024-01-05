@@ -4,6 +4,16 @@ import re
 import onnxruntime
 import numpy as np
 
+def flatten_list(nested_list):
+    flat_list = []
+    for element in nested_list:
+        if isinstance(element, list):
+            flat_list.extend(flatten_list(element))
+        else:
+            flat_list.append(element)
+
+    return flat_list
+
 class PredictionModule:
     def __init__(self, model_path="models/predictionModule.onnx"):
         self.session = onnxruntime.InferenceSession(model_path)
@@ -108,3 +118,9 @@ class Plapt:
             affinities.extend(self.prediction_module.predict(features))
 
         return affinities
+    
+    def get_cached_features(self):
+        return [tensor.tolist() for tensor in flatten_list(list(self.cache.values()))]
+
+    def clear_cache(self):
+        self.cache = {}
