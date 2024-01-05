@@ -15,7 +15,7 @@ def flatten_list(nested_list):
     return flat_list
 
 class PredictionModule:
-    def __init__(self, model_path="models/affinity_predictor0734-seed2101"):
+    def __init__(self, model_path="models/affinity_predictor0734-seed2101.onnx"):
         self.session = onnxruntime.InferenceSession(model_path)
         self.input_name = self.session.get_inputs()[0].name
 
@@ -45,7 +45,7 @@ class PredictionModule:
         return affinities
 
 class Plapt:
-    def __init__(self, prediction_module_path = "models/affinity_predictor0734-seed2101", caching=True, device='cuda'):
+    def __init__(self, prediction_module_path = "models/affinity_predictor0734-seed2101.onnx", caching=True, device='cuda'):
         # Set device for computation
         self.device = torch.device(device if torch.cuda.is_available() else 'cpu')
 
