@@ -1,0 +1,258 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[      9104,        248]
+NotebookOptionsPosition[      7625,        217]
+NotebookOutlinePosition[      8027,        233]
+CellTagsIndexPosition[      7984,        230]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a", "=", 
+   RowBox[{
+   "Import", "[", 
+    "\"\<G:\\\\Other computers\\\\Home \
+PC\\\\Programs\\\\Wolfram\\\\WELP-PLAPT\\\\prot_sequences.json\>\"", "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.9134217344566083`*^9, 3.913421754659135*^9}, {
+  3.913422710442501*^9, 3.913422716978927*^9}, {3.913423737638853*^9, 
+  3.9134237838287134`*^9}, {3.9134238219354916`*^9, 3.9134238248248854`*^9}, {
+  3.913424501165861*^9, 3.9134245105028934`*^9}},
+ CellLabel->
+  "In[121]:=",ExpressionUUID->"0a642358-478a-462e-972f-34e4e4cd144a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"b", "=", 
+   RowBox[{"a", "/.", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"a_", "->", "b_"}], ")"}], ":>", 
+     RowBox[{"{", 
+      RowBox[{"a", ",", "b"}], "}"}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.9134237729015474`*^9, 3.9134237915854783`*^9}, {
+  3.9134238285649586`*^9, 3.9134238977298465`*^9}, {3.9134245154577513`*^9, 
+  3.913424520058717*^9}},
+ CellLabel->
+  "In[122]:=",ExpressionUUID->"e3ba80d2-ff30-4db6-99a3-c7557e2ac995"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"d", "=", 
+   RowBox[{"b", "/.", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"a_", ",", "b_"}], "}"}], ":>", 
+     RowBox[{"<|", 
+      RowBox[{
+       RowBox[{"\"\<pdbid\>\"", "->", "a"}], ",", 
+       RowBox[{"\"\<seq\>\"", "->", "b"}]}], "|>"}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.913423911383026*^9, 3.913423943768633*^9}, {
+  3.913424042223857*^9, 3.9134240784254923`*^9}},
+ CellLabel->
+  "In[123]:=",ExpressionUUID->"b97bab0b-78b0-4340-a8c5-14ac1ade7e39"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "=", 
+   RowBox[{"Dataset", "[", "d", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.9134239465555687`*^9, 3.913423953398711*^9}},
+ CellLabel->
+  "In[124]:=",ExpressionUUID->"5de9b26d-7106-49c6-a9d1-a8d8100ebc69"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+  "\"\<G:\\\\Other computers\\\\Home \
+PC\\\\Programs\\\\Wolfram\\\\WELP-PLAPT\\\\prot_sequences.csv\>\"", ",", 
+   "f"}], "]"}]], "Input",
+ CellChangeTimes->{{3.9134239545829334`*^9, 3.913423986075242*^9}},
+ CellLabel->"In[69]:=",ExpressionUUID->"a52cadcb-5e61-4be1-aa52-566ebceab69a"],
+
+Cell[BoxData["\<\"G:\\\\Other computers\\\\Home \
+PC\\\\Programs\\\\Wolfram\\\\WELP-PLAPT\\\\prot_sequences.csv\"\>"], "Output",
+ CellChangeTimes->{3.913423948913911*^9, 3.9134239887594595`*^9, 
+  3.9134240837717705`*^9},
+ CellLabel->"Out[69]=",ExpressionUUID->"a3064e77-06c7-486b-8b85-9630539a5fd8"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"a1", "=", 
+   RowBox[{"Normal", "@", 
+    RowBox[{
+     RowBox[{
+     "SemanticImport", "[", " ", 
+      "\"\<G:\\\\Other computers\\\\Home \
+PC\\\\Programs\\\\Wolfram\\\\WELP-PLAPT\\\\CSAR-HiQ_36_smi.csv\>\"", "]"}], 
+     "[", 
+     RowBox[{"[", 
+      RowBox[{"2", ";;"}], "]"}], "]"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.9134243504786997`*^9, 3.9134243830421395`*^9}, {
+  3.9134251742987833`*^9, 3.9134251857420444`*^9}, {3.9134252607810464`*^9, 
+  3.91342536355379*^9}, {3.9134257675486846`*^9, 3.9134257690552073`*^9}, {
+  3.913425800701807*^9, 3.913425841686352*^9}},
+ CellLabel->
+  "In[125]:=",ExpressionUUID->"c8cd4968-1f98-46e9-968d-f0f14f798377"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"b1", "=", 
+   RowBox[{"Association", "@@", 
+    RowBox[{"(", 
+     RowBox[{"a1", "/.", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"a_", ",", "b_"}], "}"}], ":>", 
+       RowBox[{"(", 
+        RowBox[{"a", "->", "b"}], ")"}]}]}], ")"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.913424384326251*^9, 3.913424431669796*^9}},
+ CellLabel->
+  "In[126]:=",ExpressionUUID->"10fc7101-93ec-4552-ac0b-e342f810c7c1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+  "\"\<G:\\\\Other computers\\\\Home \
+PC\\\\Programs\\\\Wolfram\\\\WELP-PLAPT\\\\CSAR-HiQ_36.csv\>\"", ",", 
+   RowBox[{"Dataset", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Append", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"b1", "[", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], "]"}]}], "]"}], "&"}], "/@", 
+       "b"}], ")"}], "/.", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"a_", ",", "b_", ",", "c_"}], "}"}], ":>", 
+      RowBox[{"<|", 
+       RowBox[{
+        RowBox[{"\"\<pdbid\>\"", "->", "a"}], ",", 
+        RowBox[{"\"\<seq\>\"", "->", "b"}], ",", 
+        RowBox[{"\"\<smiles\>\"", "->", "c"}], ",", 
+        RowBox[{"\"\<smiles_can\>\"", "->", 
+         RowBox[{
+          RowBox[{"ResourceFunction", "[", "\"\<SmilesString\>\"", "]"}], "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"ImportString", "[", "c", "]"}], "[", 
+            RowBox[{"[", "1", "]"}], "]"}], ",", 
+           RowBox[{"\"\<Canonical\>\"", "->", "True"}]}], "]"}]}]}], 
+       "|>"}]}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9134245288361535`*^9, 3.9134246089460945`*^9}, {
+   3.913424654344239*^9, 3.9134246603508143`*^9}, {3.9134247018405886`*^9, 
+   3.913424816182933*^9}, 3.9134249842063355`*^9, {3.913425400502864*^9, 
+   3.9134254652993484`*^9}, 3.9134255039528694`*^9, {3.9134258608522997`*^9, 
+   3.913425860940775*^9}},
+ CellLabel->
+  "In[128]:=",ExpressionUUID->"ce6d8834-b98b-4027-a111-68dfb9ebda48"],
+
+Cell[BoxData["\<\"G:\\\\Other computers\\\\Home \
+PC\\\\Programs\\\\Wolfram\\\\WELP-PLAPT\\\\CSAR-HiQ_36.csv\"\>"], "Output",
+ CellChangeTimes->{
+  3.9134254075028076`*^9, 3.9134255054945536`*^9, {3.913425846828562*^9, 
+   3.9134258615742645`*^9}},
+ CellLabel->
+  "Out[128]=",ExpressionUUID->"627a33ec-cfcd-43f9-96bf-50eb8067daa8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"ResourceFunction", "[", "\"\<SmilesString\>\"", "]"}], "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"ImportString", "[", "#", "]"}], "[", 
+        RowBox[{"[", "1", "]"}], "]"}], ",", 
+       RowBox[{"\"\<Canonical\>\"", "->", "True"}]}], "]"}], "==", "#"}], 
+    ")"}], "&"}], "/@", 
+  RowBox[{
+   RowBox[{"Query", "[", 
+    RowBox[{"All", ",", "2"}], "]"}], "[", "a1", "]"}]}]], "Input",
+ CellChangeTimes->{{3.9134259062961016`*^9, 3.9134259176977625`*^9}, {
+  3.913425977159644*^9, 3.9134260175470448`*^9}, {3.9134260562365756`*^9, 
+  3.91342607747252*^9}},
+ CellLabel->
+  "In[132]:=",ExpressionUUID->"933773cd-32fc-421a-b30e-56cd86668fd6"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "True", ",", "False", ",", "True", ",", "True", ",", "True", ",", "True", 
+   ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", 
+   "True", ",", "False", ",", "False", ",", "True", ",", "True", ",", "True", 
+   ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", ",", 
+   "False", ",", "True", ",", "True", ",", "True", ",", "True", ",", "True", 
+   ",", "False", ",", "True", ",", "True", ",", "True", ",", "True", ",", 
+   "True", ",", "True", ",", "True"}], "}"}]], "Output",
+ CellChangeTimes->{3.9134260811508136`*^9},
+ CellLabel->
+  "Out[132]=",ExpressionUUID->"296adc43-8064-47ae-bcb4-5bce50eb609d"]
+}, Open  ]]
+},
+WindowSize->{715.5, 714},
+WindowMargins->{{Automatic, 15.75}, {3, Automatic}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (July 27, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"4d4767eb-1bf5-43c6-a41c-92469489960b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[561, 20, 566, 13, 86, "Input",ExpressionUUID->"0a642358-478a-462e-972f-34e4e4cd144a"],
+Cell[1130, 35, 484, 13, 28, "Input",ExpressionUUID->"e3ba80d2-ff30-4db6-99a3-c7557e2ac995"],
+Cell[1617, 50, 508, 14, 28, "Input",ExpressionUUID->"b97bab0b-78b0-4340-a8c5-14ac1ade7e39"],
+Cell[2128, 66, 253, 6, 28, "Input",ExpressionUUID->"5de9b26d-7106-49c6-a9d1-a8d8100ebc69"],
+Cell[CellGroupData[{
+Cell[2406, 76, 336, 7, 67, "Input",ExpressionUUID->"a52cadcb-5e61-4be1-aa52-566ebceab69a"],
+Cell[2745, 85, 300, 4, 32, "Output",ExpressionUUID->"a3064e77-06c7-486b-8b85-9630539a5fd8"]
+}, Open  ]],
+Cell[3060, 92, 700, 17, 105, "Input",ExpressionUUID->"c8cd4968-1f98-46e9-968d-f0f14f798377"],
+Cell[3763, 111, 450, 13, 28, "Input",ExpressionUUID->"10fc7101-93ec-4552-ac0b-e342f810c7c1"],
+Cell[CellGroupData[{
+Cell[4238, 128, 1572, 39, 124, "Input",ExpressionUUID->"ce6d8834-b98b-4027-a111-68dfb9ebda48"],
+Cell[5813, 169, 331, 6, 32, "Output",ExpressionUUID->"627a33ec-cfcd-43f9-96bf-50eb8067daa8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6181, 180, 745, 20, 48, "Input",ExpressionUUID->"933773cd-32fc-421a-b30e-56cd86668fd6"],
+Cell[6929, 202, 680, 12, 71, "Output",ExpressionUUID->"296adc43-8064-47ae-bcb4-5bce50eb609d"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

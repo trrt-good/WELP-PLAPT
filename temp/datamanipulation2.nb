@@ -1,0 +1,156 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='WolframDesktop 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       161,          7]
+NotebookDataLength[      5801,        146]
+NotebookOptionsPosition[      5096,        125]
+NotebookOutlinePosition[      5502,        141]
+CellTagsIndexPosition[      5459,        138]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"affinities", "=", 
+  RowBox[{"Association", "@@", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"Values", "/@", 
+       RowBox[{"Normal", "[", 
+        RowBox[{
+        "SemanticImport", "[", 
+         "\"\<C:\\\\Users\\\\tatwo\\\\Downloads\\\\Source Code of \
+CAPLA\\\\CAPLA\\\\data\\\\affinity_data.csv\>\"", "]"}], "]"}]}], ")"}], "/.", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"a_", ",", "b_"}], "}"}], ":>", 
+      RowBox[{"(", 
+       RowBox[{"a", "->", "b"}], ")"}]}]}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.9134263231225157`*^9, 3.9134263956236205`*^9}, {
+  3.913426454463563*^9, 3.9134264816627812`*^9}, {3.913426583427508*^9, 
+  3.913426585052397*^9}},
+ CellLabel->
+  "In[144]:=",ExpressionUUID->"a70a5295-7066-44ee-a994-ba86b10a5eff"],
+
+Cell[BoxData[
+ TemplateBox[<|"shortenedBoxes" -> TagBox[
+     RowBox[{"\[LeftAssociation]", 
+       RowBox[{
+         RowBox[{"\"3zzf\"", "\[Rule]", "0.4`"}], ",", 
+         RowBox[{"\"3gww\"", "\[Rule]", "0.45`"}], ",", 
+         RowBox[{"\"1w8l\"", "\[Rule]", "0.49`"}], ",", 
+         RowBox[{"\"3fqa\"", "\[Rule]", "0.49`"}], ",", 
+         RowBox[{"\"1zsb\"", "\[Rule]", "0.6`"}], ",", 
+         RowBox[{"\"4obv\"", "\[Rule]", "0.75`"}], ",", 
+         RowBox[{"\"1wkm\"", "\[Rule]", "0.82`"}], ",", 
+         RowBox[{"\"3k41\"", "\[Rule]", "0.82`"}], ",", 
+         RowBox[{"\"4eu3\"", "\[Rule]", "0.82`"}], ",", 
+         RowBox[{"\"2w97\"", "\[Rule]", "0.96`"}], ",", 
+         RowBox[{"\"1p0y\"", "\[Rule]", "1.`"}], ",", 
+         RowBox[{"\"2b1r\"", "\[Rule]", "1.`"}], ",", 
+         RowBox[{"\"2d2v\"", "\[Rule]", "1.`"}], ",", 
+         RowBox[{"\"2a31\"", "\[Rule]", "1.01`"}], ",", 
+         TemplateBox[{"13409"}, "OutputSizeLimit`Skeleton"], ",", 
+         RowBox[{"\"2q3c\"", "\[Rule]", "5.3`"}], ",", 
+         RowBox[{"\"1xl5\"", "\[Rule]", "7.35`"}], ",", 
+         RowBox[{"\"1y93\"", "\[Rule]", "2.1`"}], ",", 
+         RowBox[{"\"4ubp\"", "\[Rule]", "5.59`"}], ",", 
+         RowBox[{"\"1q0y\"", "\[Rule]", "9.`"}], ",", 
+         RowBox[{"\"1s7y\"", "\[Rule]", "5.85`"}], ",", 
+         RowBox[{"\"1txf\"", "\[Rule]", "7.24`"}], ",", 
+         RowBox[{"\"1uld\"", "\[Rule]", "5.35`"}], ",", 
+         RowBox[{"\"1uzv\"", "\[Rule]", "5.18`"}], ",", 
+         RowBox[{"\"1zhx\"", "\[Rule]", "7.26`"}], ",", 
+         RowBox[{"\"2dm5\"", "\[Rule]", "2.99`"}], ",", 
+         RowBox[{"\"1q6e\"", "\[Rule]", "2.62`"}], ",", 
+         RowBox[{"\"1q6g\"", "\[Rule]", "2.06`"}], ",", 
+         RowBox[{"\"1xw6\"", "\[Rule]", "5.62`"}]}], "\[RightAssociation]"}], 
+     Short[#, 8]& ], "line" -> 144, "sessionID" -> 18736284154904597034, 
+   "byteCount" -> 1918512, "size" -> 8, "stored" -> False, "expr" -> 
+   Missing["NotStored"], "wrap" -> OutputSizeLimit`Defer, "version" -> 1|>,
+  "OutputSizeLimitTemplate"]], "Output",
+ CellChangeTimes->{{3.9134263374787965`*^9, 3.9134263961904793`*^9}, {
+   3.913426472760916*^9, 3.9134264821320953`*^9}, 3.9134265855570393`*^9},
+ CellLabel->
+  "Out[144]=",ExpressionUUID->"4a233eee-901f-4a67-8e67-95aadf8d3676"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+  "\"\<G:\\\\Other computers\\\\Home \
+PC\\\\Programs\\\\Wolfram\\\\WELP-PLAPT\\\\data\\\\CSAR-HiQ_51.csv\>\"", ",", 
+   RowBox[{"Dataset", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Append", "[", 
+       RowBox[{"#", ",", 
+        RowBox[{"\"\<neg_log10_affinity_M\>\"", "->", 
+         RowBox[{"affinities", "[", 
+          RowBox[{"#", "[", "\"\<pdbid\>\"", "]"}], "]"}]}]}], "]"}], "&"}], "/@", 
+     RowBox[{"Normal", "[", 
+      RowBox[{
+      "SemanticImport", "[", 
+       "\"\<G:\\\\Other computers\\\\Home \
+PC\\\\Programs\\\\Wolfram\\\\WELP-PLAPT\\\\data\\\\CSAR-HiQ_51.csv\>\"", 
+       "]"}], "]"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9134262741585126`*^9, 3.9134262753087225`*^9}, {
+  3.913426315616317*^9, 3.9134263156363955`*^9}, {3.913426528138913*^9, 
+  3.913426546283536*^9}, {3.913426641430767*^9, 3.913426783466053*^9}},
+ CellLabel->
+  "In[151]:=",ExpressionUUID->"78d0298c-6028-4418-9ddb-3b01c95bb2c4"],
+
+Cell[BoxData["\<\"G:\\\\Other computers\\\\Home \
+PC\\\\Programs\\\\Wolfram\\\\WELP-PLAPT\\\\data\\\\CSAR-HiQ_51.csv\"\>"], \
+"Output",
+ CellChangeTimes->{{3.9134265002643023`*^9, 3.913426546803771*^9}, {
+  3.9134266467354383`*^9, 3.913426675812234*^9}, {3.9134267299899364`*^9, 
+  3.91342679653788*^9}},
+ CellLabel->
+  "Out[151]=",ExpressionUUID->"b55dcf71-3d83-4ae6-98f1-807945c138f5"]
+}, Open  ]]
+},
+WindowSize->{572.25, 720.75},
+WindowMargins->{{12.75, Automatic}, {0, Automatic}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (July 27, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"2e50ea12-404e-4b9d-a4ef-765fed9e8f24"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[583, 22, 802, 21, 143, "Input",ExpressionUUID->"a70a5295-7066-44ee-a994-ba86b10a5eff"],
+Cell[1388, 45, 2271, 40, 164, "Output",ExpressionUUID->"4a233eee-901f-4a67-8e67-95aadf8d3676"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3696, 90, 994, 23, 181, "Input",ExpressionUUID->"78d0298c-6028-4418-9ddb-3b01c95bb2c4"],
+Cell[4693, 115, 387, 7, 52, "Output",ExpressionUUID->"b55dcf71-3d83-4ae6-98f1-807945c138f5"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
