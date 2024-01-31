@@ -119,6 +119,39 @@ class Plapt:
 
         return affinities
     
+    def score_candidates(self, target_protein, mol_smiles, batch_size=2):
+        target_tokens = self.prot_tokenizer([self.preprocess_sequence(target_protein)],
+                                            padding=True,
+                                            max_length=3200,
+                                            truncation=True,
+                                            return_tensors='pt')
+        
+        with torch.no_grad():
+            target_representation = self.prot_encoder(**target_tokens.to(self.device)).pooler_output.cpu()
+
+        print(target_representation)
+
+        affinities = []
+        for mol in mol_smiles:
+            mol_tokens = self.mol_tokenizer(mol,
+                                                padding=True,
+                                                max_length=278,
+                                                truncation=True,
+                                                return_tensors='pt')
+        
+            with torch.no_grad():
+                mol_representations = self.mol_encoder(**mol_tokens.to(self.device)).pooler_output.cpu()
+
+            print(mol_representations)
+
+            features = torch.cat((target_representation[0], mol_representations[0]), dim=0)
+
+            print(features)
+
+            affinities.extend(self.prediction_module.predict([features]))
+
+        return affinities
+    
     def get_cached_features(self):
         return [tensor.tolist() for tensor in flatten_list(list(self.cache.values()))]
 
