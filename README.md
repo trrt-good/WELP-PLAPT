@@ -1,4 +1,4 @@
-# **PLAPT: Protein-Ligand Binding Affinity Prediction Using Pretrained Transformer Models**
+# **PLAPT: Protein-Ligand Binding Affinity Prediction Using Pretrained Transformers**
 
 This is the official code repository for PLAPT, a state-of-the-art 1D sequence-only protein-ligand binding affinity predictor, first introduced [here](https://community.wolfram.com/groups/-/m/t/3094670)
 
@@ -145,14 +145,3 @@ We source protein-ligand pairs and their corresponding affinity values from an o
 
 #### Importing Encoders and Running the Notebook
 For users to import the encoders and run the Wolfram notebook (`WL Notebooks/FinalEssay.nb`), we provide the `encoders_to_onnx.ipynb` notebook. This ensures that users can replicate our encoding process and utilize the full capabilities of PLAPT.
-
-### Results
-
-PLAPT achieved impressive results, demonstrating both high accuracy and state-of-the-art generalization in protein-ligand binding affinity prediction. Detailed analysis can be found in our paper. Key metrics include:
-
-| Metric | Test Data | Train Data |
-| ------ | --------- | ---------- |
-| R (Pearson Correlation) | 0.800988 | 0.798657 |
-| MSE (Mean Squared Error) | 0.978599 | 0.967477 |
-| RMSE (Root Mean Squared Error) | 0.989241 | 0.983604 |
-| MAE (Mean Absolute Error) | 0.864218 | 0.861717 |
