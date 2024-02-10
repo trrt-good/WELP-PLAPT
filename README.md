@@ -2,6 +2,11 @@
 
 This is the official code repository for PLAPT, a state-of-the-art protein-ligand binding affinity predictor. [Preprint](https://doi.org/10.1101/2024.02.08.575577)
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/plapt-protein-ligand-binding-affinity/protein-ligand-affinity-prediction-on-csar)](https://paperswithcode.com/sota/protein-ligand-affinity-prediction-on-csar?p=plapt-protein-ligand-binding-affinity)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/plapt-protein-ligand-binding-affinity/protein-ligand-affinity-prediction-on-pdbbind)](https://paperswithcode.com/sota/protein-ligand-affinity-prediction-on-pdbbind?p=plapt-protein-ligand-binding-affinity)
+
+
 ### Abstract
 Understanding protein-ligand binding affinity is crucial for drug discovery, enabling the identification of promising drug candidates efficiently. We introduce PLAPT, a novel model leveraging transfer learning from pre-trained transformers like ProtBERT and ChemBERTa to predict binding affinities with high accuracy. Our method processes one-dimensional protein and ligand sequences, leveraging a branching neural network architecture for feature integration and affinity estimation. We demonstrate PLAPT's superior performance through validation on multiple datasets, achieving state-of-the-art results while requiring significantly less computational resources for training compared to existing models. Our findings indicate that PLAPT offers a highly effective and accessible approach for accelerating drug discovery efforts.
 
