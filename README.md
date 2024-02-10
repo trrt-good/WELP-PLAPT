@@ -1,6 +1,6 @@
 # **PLAPT: Protein-Ligand Binding Affinity Prediction Using Pretrained Transformers**
 
-This is the official code repository for PLAPT, a state-of-the-art 1D sequence-only protein-ligand binding affinity predictor, first introduced [here](https://community.wolfram.com/groups/-/m/t/3094670)
+This is the official code repository for PLAPT, a state-of-the-art protein-ligand binding affinity predictor. [Preprint](https://doi.org/10.1101/2024.02.08.575577)
 
 ### Abstract
 Understanding protein-ligand binding affinity is crucial for drug discovery, enabling the identification of promising drug candidates efficiently. We introduce PLAPT, a novel model leveraging transfer learning from pre-trained transformers like ProtBERT and ChemBERTa to predict binding affinities with high accuracy. Our method processes one-dimensional protein and ligand sequences, leveraging a branching neural network architecture for feature integration and affinity estimation. We demonstrate PLAPT's superior performance through validation on multiple datasets, achieving state-of-the-art results while requiring significantly less computational resources for training compared to existing models. Our findings indicate that PLAPT offers a highly effective and accessible approach for accelerating drug discovery efforts.
