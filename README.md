@@ -1,10 +1,12 @@
 # **PLAPT: Protein-Ligand Binding Affinity Prediction Using Pretrained Transformers**
 
-This is the official code repository for PLAPT, a state-of-the-art protein-ligand binding affinity predictor. [Preprint](https://doi.org/10.1101/2024.02.08.575577)
-
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/plapt-protein-ligand-binding-affinity/protein-ligand-affinity-prediction-on-csar)](https://paperswithcode.com/sota/protein-ligand-affinity-prediction-on-csar?p=plapt-protein-ligand-binding-affinity)
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/plapt-protein-ligand-binding-affinity/protein-ligand-affinity-prediction-on-pdbbind)](https://paperswithcode.com/sota/protein-ligand-affinity-prediction-on-pdbbind?p=plapt-protein-ligand-binding-affinity)
+
+This is the official code repository for PLAPT, a state-of-the-art protein-ligand binding affinity predictor. [Preprint](https://doi.org/10.1101/2024.02.08.575577)
+
+
 
 
 ### Abstract
