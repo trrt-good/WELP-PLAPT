@@ -71,21 +71,24 @@ class Plapt:
         # Preprocess protein sequence
         return " ".join(re.sub(r"[UZOB]", "X", seq))
 
-    def tokenize(self, prot_seqs, mol_smiles):
-        # Tokenize and encode protein sequences
-        prot_tokens = self.prot_tokenizer([self.preprocess_sequence(seq) for seq in prot_seqs],
-                                            padding=True,
-                                            max_length=3200,
-                                            truncation=True,
-                                            return_tensors='pt')
-
+    def tokenize(self, mol_smiles):
         # Tokenize and encode molecules
         mol_tokens = self.mol_tokenizer(mol_smiles,
-                                            padding=True,
-                                            max_length=278,
-                                            truncation=True,
-                                            return_tensors='pt')
-        return prot_tokens, mol_tokens
+                                        padding=True,
+                                        max_length=278,
+                                        truncation=True,
+                                        return_tensors='pt')
+        return mol_tokens
+    
+    def tokenize_prot(self, prot_seq):
+        # Tokenize and encode protein sequences
+        prot_tokens = self.prot_tokenizer(self.preprocess_sequence(prot_seq),
+                                          padding=True,
+                                          max_length=3200,
+                                          truncation=True,
+                                          return_tensors='pt')
+
+        return prot_tokens
 
     # Define the batch functions
     @staticmethod
@@ -94,8 +97,16 @@ class Plapt:
         for ndx in range(0, length, n):
             yield iterable[ndx:min(ndx + n, length)]
     
-    def predict_affinity(self, prot_seqs, mol_smiles, batch_size=2):
-        input_strs = list(zip(prot_seqs,mol_smiles))
+    def predict_affinity(self, prot_seq, mol_smiles, batch_size=2):
+        input_strs = mol_smiles
+
+        prot_tokens = self.tokenize_prot(prot_seq)
+        with torch.no_grad():
+            prot_representations = self.prot_encoder(**prot_tokens.to(self.device)).pooler_output.cpu()
+        prot_representations = prot_representations.squeeze(0)
+        # repeat for zip(prot_representations, mol_representations)
+        prot_representations = [prot_representations for i in range(batch_size)]
+
         affinities = []
         for batch in self.make_batches(input_strs, batch_size):
             batch_key = str(batch)  # Convert batch to a string to use as a dictionary key
@@ -105,12 +116,13 @@ class Plapt:
                 features = self.cache[batch_key]
             else:
                 # Tokenize and encode the batch, then cache the results
-                prot_tokens, mol_tokens = self.tokenize(*zip(*batch))
+                mol_tokens = self.tokenize(batch)
                 with torch.no_grad():
-                    prot_representations = self.prot_encoder(**prot_tokens.to(self.device)).pooler_output.cpu()
                     mol_representations = self.mol_encoder(**mol_tokens.to(self.device)).pooler_output.cpu()
+                    mol_representations = [mol_representations[i, :] for i in range(mol_representations.shape[0])]
 
-                features = [torch.cat((prot, mol), dim=0) for prot, mol in zip(prot_representations, mol_representations)]
+                features = [torch.cat((prot, mol), dim=0) for prot, mol in 
+                            zip(prot_representations, mol_representations)]
 
                 if self.caching:
                     self.cache[batch_key] = features
