@@ -36,7 +36,10 @@ def main():
     args = parser.parse_args()
 
     plapt = Plapt()
-    results = plapt.predict_affinity(args.target[0], args.smiles)
+    if len(args.target) == len(args.smiles):
+        results = plapt.predict_affinity(args.target, args.smiles)
+    else:
+        results = plapt.score_candidates(args.target, args.smiles)
 
     args.output, output_format = determine_format_and_update_filename(args.output, args.format)
 
